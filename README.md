@@ -66,6 +66,11 @@ Els millors models han sigut la regressió logística i el random forest, el pri
 
 Amb un model més complex es podria intentar predir d'un frame al següent de la partida com avançaran molts dels atributs, una mena de simulació de parts de partides sota unes condicions, però això és molt complex. Una altra idea seria treballar encara en més profunditat la part de l'EDA i extreure encara més informació de com s'hauria de jugar una partida per poder tenir les màximes probabilitats de guanyar. També per millorar la capacitat de l'usuari de poder interactuar amb els models es pot fer un dashboard.
 
+## Problemes coneguts
+
+GitHub i els notebooks de jupyter no son molt compatibles, això es un problema per els pandas profiling que es realitzen al notebook de l'EDA, per tant i per evitar problemes a l'hora de veure el notebook aquests profilings estaran també entre els arxius del repositori, ja que aquests profiles es fan servir per explicar variables i distribucions dins del notebook.
+
+Per visualitzar-los en el notebook només s'haurà de descarregar el repositori i carregar en un entorn compatible com es jupyter l'arxiu `EDA.ipynb` i en una cel·la inferior a on s'executa la creació dels profiles escriure `profile` i executar-la després de crear la variable en la cel·la superior.
 ## Llicencia
 
 El projecte ha sigut desenvolupat per Biel González Garriga
