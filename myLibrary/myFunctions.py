@@ -8,6 +8,21 @@ import time
 from sklearn.inspection import permutation_importance
 
 def doublePieWonLost(df, col1, col2, title, labels, figsize=(10,10), size=0.3):
+    '''
+    Plots a double pie plot where the first column is conditioned by the second
+    
+        Parameters:
+            df (pandas.core.frame.DataFrame): DataFrame of interest
+            col1 (str): Contains the conditioned column
+            col2 (str): Contains the conditioning column
+            title (str): Contains the title for the plot
+            labels (list): Contains the labels for the plot
+            figsize (tuple): Contains the dimensions of the figure
+            size (float): Adjusts the dimensions of the central ring radius
+                          
+        Returns:
+            None
+    '''
     resultsToPlot={}
     Results=df[col2].unique()
 
@@ -43,6 +58,18 @@ def doublePieWonLost(df, col1, col2, title, labels, figsize=(10,10), size=0.3):
     plt.show()
     
 def expAndGoldProgress(df,idx,save=False):
+    '''
+    Plots a graphic showing experience and gold though a determined game
+    
+        Parameters:
+            df (pandas.core.frame.DataFrame): Dataframe containing lol_ranked_games.csv
+            idx (int): Contains the id of the game to plot
+            save (bool): True if you want to save the plot
+                          
+        Returns:
+            None
+    '''
+        
     grafic=(df[df["gameId"]==idx]["frame"],
             df[df["gameId"]==idx]["goldDiff"],
             df[df["gameId"]==idx]["expDiff"])
@@ -57,6 +84,21 @@ def expAndGoldProgress(df,idx,save=False):
         print("Image saved")
         
 def oneFeatureClassification(X_train,Y_train,X_test,Y_test,model,show_numeric_results=False):
+    '''
+    Makes and plots a one feature classification of all features of a dataset 
+    
+        Parameters:
+            X_train(pandas.core.frame.DataFrame): Training set
+            Y_train(pandas.core.frame.DataFrame): True predictions of training set
+            X_test(pandas.core.frame.DataFrame): Test set
+            Y_test(pandas.core.frame.DataFrame): True predictions of test set
+            model (Object): Classifier object
+            show_numeric_results (bool): True if you want each feature score numerically printed on screen
+                          
+        Returns:
+            None
+    '''
+    
     features = X_train.columns
     Roc, F1 = [], []
     features = features.tolist()
@@ -92,6 +134,27 @@ def oneFeatureClassification(X_train,Y_train,X_test,Y_test,model,show_numeric_re
 
 def fullModelClassification(model,X_train,Y_train,X_test,Y_test,
                             save_results=False):
+    '''
+    Makes a full model classification and prints results
+    
+        Parameters:
+            model (Object): Classifier object
+            X_train(pandas.core.frame.DataFrame): Training set
+            Y_train(pandas.core.frame.DataFrame): True predictions of training set
+            X_test(pandas.core.frame.DataFrame): Test set
+            Y_test(pandas.core.frame.DataFrame): True predictions of test set
+            save_results (bool): True if you want the name of the model, trained model, time and metrics to be returned
+                          
+        Returns:
+            If save_results it's true then it returns
+            type(model).__name__ (string): The name of the model
+            model (Object): Trained classifier
+            end-start (float): Training time of the model
+            dictionary: It contains all the computed metrics
+            
+    '''
+    
+    
     print("Model: "+type(model).__name__)
     
     #Model training
@@ -145,6 +208,21 @@ def fullModelClassification(model,X_train,Y_train,X_test,Y_test,
               )
     
 def featureImportance(X_train,Y_train,model,feature_names,figsize=(100,30)):
+    '''
+    Calculates feature importance and it plots a graphic about it
+    
+        Parameters:
+            
+            X_train(pandas.core.frame.DataFrame): Training set
+            Y_train(pandas.core.frame.DataFrame): True predictions of training set
+            model (Object): Trained classifier object
+            feature_names (list): Must contain all feature names used in the trained classifier
+            figsize (tuple): Contains the dimension of the plot
+                          
+        Returns:
+            None
+            
+    '''
     result=permutation_importance(model, X_train,
                                   Y_train,n_repeats=5,random_state=2,n_jobs=2)
     importances=pd.Series(result.importances_mean,
