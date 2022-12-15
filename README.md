@@ -68,7 +68,7 @@ Amb un model més complex es podria intentar predir d'un frame al següent de la
 
 ## Problemes coneguts
 
-GitHub i els notebooks de jupyter no son molt compatibles, això es un problema per els pandas profiling que es realitzen al notebook de l'EDA, per tant i per evitar problemes a l'hora de veure el notebook aquests profilings estaran també entre els arxius del repositori, ja que aquests profiles es fan servir per explicar variables i distribucions dins del notebook.
+GitHub i els notebooks de jupyter no son molt compatibles, això es un problema per els pandas profiling que es realitzen al notebook de l'EDA, per tant i per evitar problemes a l'hora de veure el notebook aquests profilings estaran també entre els arxius del repositori, ja que aquests profiles es fan servir per explicar variables i distribucions dins del notebook. Per visualitzar-los a part s'han de descarregar ja que son massa pesats per veure'ls des de github.
 
 Per visualitzar-los en el notebook només s'haurà de descarregar el repositori i carregar en un entorn compatible com es jupyter l'arxiu `EDA.ipynb` i en una cel·la inferior a on s'executa la creació dels profiles escriure `profile` i executar-la després de crear la variable en la cel·la superior.
 ## Llicencia
