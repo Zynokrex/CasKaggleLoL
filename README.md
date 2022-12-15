@@ -35,7 +35,7 @@ Es va contemplar i fer atributs que continuessin quartils, variàncies, mitjanes
 | Model | Hiperparametres** | Model.score | ROC AUC | F1 | Accuracy | Precision | Temps |
 | -- | -- | -- | -- | -- | -- | -- | -- |
 | Logistic Regression | default | 0,975 | 0,997 | 0,976 | 0,976 | 0,976 | 0,17s |
-| Perceptron | default  | 0,874 | 0,957 | 0,868 | 0,868 | 0,868 | 0,868 | 0,236s |
+| Perceptron | default  | 0,874 | 0,957 | 0,868 | 0,868 | 0,868 | 0,236s |
 | Ada Boosting | default  | 0,984 | 0,997 | 0,986 | 0,986 | 0,986 | 6,164s |
 | Gradient Boosting | default  | 0,985 | 0,999 | 0,983 | 0,983 | 0,983 | 6,329s |
 | Random Forest | default  | 0,985 | 0,999 | 0,985 | 0,985 | 0,985 | 1,720s |
