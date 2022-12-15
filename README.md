@@ -38,7 +38,7 @@ Es va contemplar i fer atributs que continuessin quartils, variàncies, mitjanes
 | Perceptron | default  | 0,874 | 0,957 | 0,868 | 0,868 | 0,868 | 0,868 | 0,236s |
 | Ada Boosting | default  | 0,984 | 0,997 | 0,986 | 0,986 | 0,986 | 6,164s |
 | Gradient Boosting | default  | 0,985 | 0,999 | 0,983 | 0,983 | 0,983 | 6,329s |
-| Random Forest | default  | 0,985 | 0,999 | 0,985 | 0,985 | 0,985 | 1,720 |
+| Random Forest | default  | 0,985 | 0,999 | 0,985 | 0,985 | 0,985 | 1,720s |
 | Multi Layer Perceptron | default  | 0,974 | 0,980 | 0,958 | 0,958 | 0,958 | 1,388s |
 
 ## Requisits
